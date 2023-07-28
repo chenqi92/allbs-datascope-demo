@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>五位一体数据查询</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ant-design-vue/2.2.13/style/index.min.css">
+</head>
+<body>
+<div id="app">
+  <h1>{{ message }}</h1>
+  <a-button type="primary" @click="onClick">点击我</a-button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.21/vue.global.prod.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ant-design-vue/2.2.13/index.umd.min.js"></script>
+<script>
+  const { createApp, ref } = Vue;
+  const { Button } = antd;
+
+  const app = createApp({
+    components: {
+      'a-button': Button
+    },
+    setup() {
+      const message = ref('欢迎来到 Vue & Ant Design Demo!');
+      const onClick = () => {
+        alert('你点击了按钮！');
+      };
+      return { message, onClick };
+    }
+  });
+
+  app.mount('#app');
+</script>
+</body>
+</html>
